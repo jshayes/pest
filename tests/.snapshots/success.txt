@@ -29,6 +29,12 @@
   ✓ it gets executed after the test
   ✓ outer → inner → it does not get executed before the test
   ✓ outer → inner → it should call all parent afterEach functions
+  ✓ matching describe block names → outer → middle → inner → it does not get executed before the test
+  ✓ matching describe block names → outer → middle → inner → it should call all parent afterEach functions
+  ✓ matching describe block names → outer → middle → does not get executed before the test
+  ✓ matching describe block names → outer → middle → should not call afterEach functions for sibling describe blocks with the same name
+  ✓ matching describe block names → outer → inner → does not get executed before the test
+  ✓ matching describe block names → outer → inner → should not call afterEach functions for decendent of sibling describe blocks with the same name
 
    PASS  Tests\Features\Assignee
   ✓ it may be associated with an assignee [@nunomaduro, @taylorotwell]
@@ -45,6 +51,11 @@
   ✓ outer → inner → it should call all parent beforeEach functions
   ✓ with expectations → nested block → test
   ✓ with expectations → test
+  ✓ matching describe block names → outer → middle → inner → it should call all parent beforeEach functions
+  ✓ matching describe block names → outer → middle → should not call beforeEach functions for sibling describe blocks with the same name
+  ✓ matching describe block names → outer → inner → should not call beforeEach functions for descendent of sibling describe blocks with the same name
+  ✓ called on all tests → beforeEach should be called
+  ✓ called on all tests → beforeEach should be called for all tests
 
    PASS  Tests\Features\BeforeEachProxiesToTestCallWithExpectations
   ✓ runs 1
@@ -1642,4 +1653,4 @@
    WARN  Tests\Visual\Version
   - visual snapshot of help command output
 
-  Tests:    2 deprecated, 4 warnings, 5 incomplete, 2 notices, 21 todos, 32 skipped, 1133 passed (2702 assertions)
+  Tests:    2 deprecated, 4 warnings, 5 incomplete, 2 notices, 21 todos, 32 skipped, 1144 passed (2718 assertions)
